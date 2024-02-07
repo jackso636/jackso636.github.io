@@ -90,7 +90,7 @@ main {
 
 #portfolio a {
   text-decoration: none;
-  color: #000000;
+  color: #d06464;
 }
     /* responsive web design */
     @media screen and (min-width: 120px) and (max-width: 1080px) {
