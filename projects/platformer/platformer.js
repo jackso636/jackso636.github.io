@@ -13,7 +13,7 @@ $(function () {
       $(document).on("keyup", handleKeyUp);
       firstTimeSetup = false;
       //start game
-      setInterval(main, 1000 / frameRate);
+      setInterval(main, 900 / frameRate);
     }
     //create walls
     createPlatform(-50, -50, canvas.width + 100, 50); //top
@@ -44,14 +44,16 @@ $(function () {
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
     createPlatform(0,700,100,100)
-    createPlatform(200,600,30,10)
-    createPlatform(400,500,30,10)
-    createPlatform(600,400,30,10)
-    createPlatform(800,300,30,10)
-    createPlatform(1000,200,30,10)
-    createPlatform(1200,100,30,10)
+    createPlatform(200,600,70,10)
+    createPlatform(400,500,70,10)
+    createPlatform(600,400,70,10)
+    createPlatform(740,300,70,10)
+    createPlatform(1000,200,70,10)
+    createPlatform(1200,100,70,10)
     createPlatform(710,500,70,10)
-    
+    createPlatform(910,400,70,10)
+    createPlatform(850,560,30,10)
+    createPlatform(930,630,30,10)
         // TODO 2
         // Create collectables
         // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
@@ -60,15 +62,17 @@ $(function () {
         createCollectable("steve", 725, 455, 0, 0.5);
         createCollectable("grace", 595, 300);
         createCollectable("kennedi", 795, 200);
+        createCollectable("diamond", 850, 200);
     
-        git push
+      
         // TODO 3
         // Create cannons
         // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
         // Your wall choices are: 'top' 'left' 'right' and 'bottom'
         // example usage: createCannon(side, position, delay, width, height)
-        createCannon("left", 400, 1000)
-        createCannon("right", 1200, 100)
+        createCannon("left", 400, 2000)
+        createCannon("right", 300, 2000)
+        createCannon("top", 600, 2000)
     
     
     
