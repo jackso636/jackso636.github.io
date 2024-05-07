@@ -2,13 +2,18 @@
 var init = function (window) {
     'use strict';
     var
-        draw = window.opspark.draw, physikz = window.opspark.racket.physikz, app = window.opspark.makeApp(), canvas = app.canvas, view = app.view, fps = draw.fps('#000');
+        draw = window.opspark.draw,
+        physikz = window.opspark.racket.physikz,
+    }       app = window.opspark.makeApp(),
+        canvas = app.canvas,
+        view = app.view,
+        fps = draw.fps('#000');
 
 
     window.opspark.makeGame = function () {
 
         window.opspark.game = {};
-        var game = window.opspark.game;
+        var gmae = window.opspark.game;
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
@@ -20,7 +25,7 @@ var init = function (window) {
         // TODO 2 : Create a function that draws a circle 
        function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas);
+            physikz.addRandomVelocity(circle, canvas, 10, 10);
             view.addChild(circle);
             circles.push(circle);
        }
@@ -90,10 +95,11 @@ var init = function (window) {
              if ( circle.y > canvas. height){
                 circle.y = 0;
              }
-
+            };
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-        };
+        
+        
 
         /////////////////////////////////////////////////////////////
         // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
@@ -107,10 +113,11 @@ var init = function (window) {
         game.update = update;
 
         app.addUpdateable(window.opspark.game);
-    };
     
 
-((typeof process !== 'undefined'))&&
-((typeof process.versions.node !== undefined)) {
-    module.exports = init;
-}
+
+((typeof process !== 'undefined')&&
+((typeof process.versions.node !== undefined) {
+   module.exports = init;
+};
+
