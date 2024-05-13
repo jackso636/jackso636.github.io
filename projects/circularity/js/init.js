@@ -4,17 +4,18 @@ var init = function (window) {
     var
         draw = window.opspark.draw,
         physikz = window.opspark.racket.physikz,
-    }       app = window.opspark.makeApp(),
+           app = window.opspark.makeApp(),
         canvas = app.canvas,
         view = app.view,
         fps = draw.fps('#000');
 
 
+
     window.opspark.makeGame = function () {
 
         window.opspark.game = {};
-        var gmae = window.opspark.game;
-
+        var game = window.opspark.game;
+    }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -31,21 +32,18 @@ var init = function (window) {
        }
         
         // TODO 3 / 7 : Call the drawCircle() function 
-       var loopsCompleted = 10;
-       while (loopsCompleted < 100){
-        drawCircle();
-        loopsCompleted++;
-       }
-    
-    for (var loopsCompleted = 10; loopsCompleted < 10 ; loopsCompleted++){
+
+    {
+    for (var loopsCompleted = 1; loopsCompleted < 10 ; loopsCompleted++){
         drawCircle();
     }
+    
         drawCircle();
         drawCircle();
         drawCircle();
         drawCircle();
         drawCircle();
-       
+}
             ////////////////////////////////////////////////////////////
             ///////////////// PROGRAM LOGIC ////////////////////////////
             ////////////////////////////////////////////////////////////
@@ -69,7 +67,7 @@ var init = function (window) {
              
 
                 // TODO 9 : Iterate over the array
-            }
+}
 
         /*
         This Function should check the position of a circle that is passed to the
@@ -80,20 +78,20 @@ var init = function (window) {
         
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if (circle.x > canvas.width) {
+            if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            if (circle.x < 0){
-                circle.x = canvas.with;
+            if (circle.x < 10){
+                circle.x = canvas.width;
             }
 
-            if ( circle.y < 0){
+            if ( circle.y < 10){
                 circle.y = canvas.height;
             }
 
             
              if ( circle.y > canvas. height){
-                circle.y = 0;
+                circle.y = 10;
              }
             };
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
@@ -113,11 +111,14 @@ var init = function (window) {
         game.update = update;
 
         app.addUpdateable(window.opspark.game);
+
+;
     
 
 
-((typeof process !== 'undefined')&&
-((typeof process.versions.node !== undefined) {
-   module.exports = init;
-};
-
+        if((typeof process !== 'undefined') &&
+        (typeof process.versions.node !== 'undefined')) {
+        // here, export any references you need for tests //
+        module.exports = init;
+        }
+    
