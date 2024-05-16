@@ -100,8 +100,13 @@
    			positionX = 0;
 			points = points + 1;
 			changeBoxText(points);
-			speed = speed + 3;
+			speed += 3;
 			}
+			if (speed => 1){
+				return speed + 3
+			}
+			else if (speed <= -1)
+				return speed - 3
 			
 			
 		})();
